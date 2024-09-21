@@ -5,6 +5,17 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/app
-    environment:
-      - REACT_APP_API_URL=http://localhost:8000
-
+  rasa:
+    build:
+      context: rasa
+      dockerfile: Dockerfile
+    user: ${UID:-1000}:${GID:-1000}
+    volumes:
+      - ./rasa:/app
+    ports:
+      - "5005:5005"
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"

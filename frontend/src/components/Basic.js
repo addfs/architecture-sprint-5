@@ -50,6 +50,7 @@ function Basic() {
     })
       .then((response) => response.json()) // Преобразуем ответ в JSON
       .then((response) => {
+        console.log(response);
         if (response) {
           // Получаем текстовое сообщение от бота
           const temp = response[0];

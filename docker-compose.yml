@@ -6,7 +6,7 @@ services:
     volumes:
       - ./frontend:/app
   rasa:
-    image: rasa/rasa-custom:latest
+    image: ghcr.io/addfs/rasa/rasa-custom:latest
     user: ${UID:-1000}:${GID:-1000}
     volumes:
       - ./rasa:/app
@@ -14,7 +14,7 @@ services:
       - "5005:5005"
     command:
       - run
+      - --debug
       - --enable-api
       - --cors
       - "*"
-      - --log-level DEBUG

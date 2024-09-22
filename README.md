@@ -2,6 +2,7 @@
 ```bash
 make start
 ```
+URL с чатом - http://localhost:3000/
 
 [rasa.log](rasa.log) - логи запуска проекта
 

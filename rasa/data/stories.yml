@@ -1,28 +1,36 @@
 version: "3.1"
 stories:
-  - story: Приветствие и запрос помощи
+  - story: Приветствие
     steps:
       - intent: приветствие
       - action: utter_greet
+
+  - story: Прощание
+    steps:
+      - intent: прощание
+      - action: utter_goodbye
+
+  - story: Запрос помощи
+    steps:
       - intent: запрос_помощи
       - action: utter_help
 
-  - story: Информация о проекте
+  - story: Описание архитектуры
     steps:
       - intent: описание_архитектуры
       - action: utter_action_project_info
 
-  - story: Выбор технологии для проекта
+  - story: Выбор технологий
     steps:
       - intent: выбор_технологий
       - action: utter_action_tech_info
 
-  - story: Микросервисная архитектура
+  - story: Микросервисы
     steps:
       - intent: микросервисы
       - action: utter_action_microservice_info
 
-  - story: Монолитная архитектура
+  - story: Монолит
     steps:
       - intent: монолит
       - action: utter_action_monolith_info
@@ -32,32 +40,32 @@ stories:
       - intent: интеграция_систем
       - action: utter_action_integration_info
 
-  - story: Безопасность системы
+  - story: Безопасность
     steps:
       - intent: безопасность
       - action: utter_action_security_info
 
-  - story: Оптимизация производительности
+  - story: Производительность
     steps:
       - intent: производительность
-      - action: utter_help
+      - action: utter_performance
 
-  - story: Масштабируемость системы
+  - story: Масштабируемость
     steps:
       - intent: масштабируемость
       - action: utter_action_scalability_info
 
-  - story: Обеспечение отказоустойчивости
+  - story: Отказоустойчивость
     steps:
       - intent: отказоустойчивость
       - action: utter_action_resilience_info
 
-  - story: DevOps настройка
+  - story: DevOps
     steps:
       - intent: DevOps
       - action: utter_action_devops_info
 
-  - story: Контейнеризация проекта
+  - story: Контейнеризация
     steps:
       - intent: контейнеризация
       - action: utter_action_containerization_info
@@ -67,10 +75,30 @@ stories:
       - intent: выбор_базы_данных
       - action: utter_action_db_choice
 
-  - story: Документация архитектуры
+  - story: Методологии разработки
+    steps:
+      - intent: методологии_разработки
+      - action: utter_action_development_methodologies
+
+  - story: Архитектурные паттерны
+    steps:
+      - intent: архитектурные_паттерны
+      - action: utter_action_architecture_patterns
+
+  - story: Документация
     steps:
       - intent: документация
-      - action: utter_help
+      - action: utter_action_documentation
+
+  - story: Облачные технологии
+    steps:
+      - intent: облачные_технологии
+      - action: utter_action_cloud_technologies
+
+  - story: Архитектурные решения
+    steps:
+      - intent: архитектурные_решения
+      - action: utter_action_architecture_solutions
 
   - story: Мониторинг микросервисов
     steps:
@@ -80,7 +108,7 @@ stories:
   - story: Оркестрация микросервисов
     steps:
       - intent: оркестрация_микросервисов
-      - action: utter_help
+      - action: utter_action_orchestration_info
 
   - story: Тестирование микросервисов
     steps:
@@ -90,19 +118,14 @@ stories:
   - story: Сервисная сеть
     steps:
       - intent: сервисная_сеть
-      - action: utter_help
-
-  - story: Безопасность микросервисов
-    steps:
-      - intent: безопасность_микросервисов
-      - action: utter_action_security_info
-
-  - story: Масштабируемость микросервисов
-    steps:
-      - intent: масштабируемость
-      - action: utter_action_scalability_info
+      - action: utter_action_service_mesh_info
 
   - story: Отказоустойчивость микросервисов
     steps:
       - intent: отказоустойчивость_микросервисов
-      - action: utter_action_resilience_info
+      - action: utter_action_microservice_resilience_info
+
+  - story: Микросервисная архитектура
+    steps:
+      - intent: микросервисная_архитектура
+      - action: utter_action_microservice_architecture

@@ -6,9 +6,7 @@ services:
     volumes:
       - ./frontend:/app
   rasa:
-    build:
-      context: rasa
-      dockerfile: Dockerfile
+    image: rasa/rasa-custom:latest
     user: ${UID:-1000}:${GID:-1000}
     volumes:
       - ./rasa:/app
@@ -19,3 +17,4 @@ services:
       - --enable-api
       - --cors
       - "*"
+      - --log-level DEBUG

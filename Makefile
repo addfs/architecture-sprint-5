@@ -10,12 +10,15 @@ deps:
 start: deps
 	@docker compose up -d --build
 
-
-rasa-train:
-	@echo "Training rasa model..."
-	@docker run --rm -v $(ROOT_DIR)/rasa:/app -u $(UID):$(GID) -w /app rasa/rasa:3.6.20-full train
-
-
 rasa-init:
 	@echo "init rasa"
 	@docker run --rm -v $(ROOT_DIR)/rasa:/app -u $(UID):$(GID) -w /app rasa/rasa:3.6.20-full init --no-prompt
+
+rasa-build:
+	@echo "Building rasa image..."
+	@docker build -t rasa/rasa-custom:latest $(ROOT_DIR)/rasa
+
+rasa-train:
+	@echo "Training rasa model..."
+	@docker run --rm -v $(ROOT_DIR)/rasa:/app -u $(UID):$(GID) -w /app rasa/rasa-custom:latest train
+

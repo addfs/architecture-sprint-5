@@ -11,7 +11,16 @@ assistant_id: assistant_architect
 language: ru
 
 pipeline:
-  - name: WhitespaceTokenizer               # Токенизатор, разделяющий текст по пробелам
+  - name: "SpacyNLP"
+    model: "ru_core_news_sm"
+    case_sensitive: False
+  - name: "SpacyTokenizer"
+    "intent_tokenization_flag": False
+    "intent_split_symbol": "_"
+    "token_pattern": None
+  - name: "SpacyFeaturizer"
+    "pooling": "mean"
+#  - name: WhitespaceTokenizer               # Токенизатор, разделяющий текст по пробелам
   - name: RegexFeaturizer                   # Извлечение признаков с помощью регулярных выражений
   - name: LexicalSyntacticFeaturizer        # Лексико-синтаксический анализатор
   - name: CountVectorsFeaturizer            # Извлечение признаков по частоте слов

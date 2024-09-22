@@ -1,0 +1,20 @@
+services:
+  frontend:
+    image: ghcr.io/addfs/rasa/frontend:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+  rasa:
+    image: ghcr.io/addfs/rasa/rasa-custom:latest
+    user: ${UID:-1000}:${GID:-1000}
+    volumes:
+      - ./rasa:/app
+    ports:
+      - "5005:5005"
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+      - --log-level DEBUG

@@ -5,7 +5,7 @@
 
 
 # production
-/build
+/frontend/build
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,react,jetbrains+all,visualstudiocode,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react,jetbrains+all,visualstudiocode,macos,windows
@@ -170,7 +170,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+frontend/build/Release
 
 # Dependency directories
 node_modules/
@@ -330,3 +330,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,jetbrains+all,visualstudiocode,macos,windows
+
+rasa/.rasa/cache/
